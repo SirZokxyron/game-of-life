@@ -1,8 +1,22 @@
 #include <iostream>
+#include "cell.hpp"
 
-int main (int argc, char *argv[]) {
+using namespace std;
 
-    std::cout << "Hello World!" << std::endl;
+int main () {
 
+    // Create a Cell
+    // Print its state
+    // Change the state
+    // Print its state again
+
+    Cell new_cell = Cell();
+
+    cout << new_cell << endl;
+    new_cell.SetState(CellState::ALIVE);
+    cout << new_cell << endl;
+    
+    new_cell.~Cell();
+    
     return 0;
 }
