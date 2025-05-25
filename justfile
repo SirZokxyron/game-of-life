@@ -16,7 +16,8 @@ build: compile
 
 # Compiles every .o file
 compile:
-	for file in `ls src/ | grep .cpp | cut -c -4`; do \
+	for file in `ls src/ | grep .cpp | rev | cut -c5- | rev `; do \
+		echo $file; \
 		{{CC}} {{CFLAGS}} -c src/$file.cpp -o out/$file.o; \
 	done
 
